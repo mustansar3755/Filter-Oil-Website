@@ -67,3 +67,9 @@ export const faqs = [
   { q: 'What’s the difference between oil filtration and fuel filtration?', a: 'Oil filtration targets particulate and water in lubricants and hydraulic fluid. Fuel filtration adds water separation and microbial control, because diesel stored in tanks grows bacteria and fungi at the fuel-water interface.' },
   { q: 'Can Filtroil filtration systems reduce unplanned downtime?', a: 'Yes. Contamination is a leading cause of component failure. Holding fluid at target cleanliness reduces failures and lets you plan repairs around scheduled outages.' },
 ]
+
+import  globeImg  from '../assets/image_1.png'
+
+export const images = {
+  globeImg: globeImg,
+}

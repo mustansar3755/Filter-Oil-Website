@@ -2,10 +2,11 @@ import { useRef } from 'react'
 import { ArrowRight, Droplet } from 'lucide-react'
 import gsap from 'gsap'
 import { useGSAP } from './useGSAPShim'
+import { images } from '../data/content'
+
 
 const headline = ['Precision', 'Filtration.', 'Proven', 'Results.']
 
-// ISO 4406 cleanliness code going from dirty to clean = the one hero moment.
 export default function Hero() {
   const root = useRef(null)
   const codeRef = useRef(null)
@@ -27,7 +28,17 @@ export default function Hero() {
 
   return (
     <section id="top" ref={root} className="grid-bg relative overflow-hidden bg-brand-deep pb-24 pt-32 text-white lg:pt-40">
+      {/* Background Glow */}
       <div className="pointer-events-none absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full bg-leaf/20 blur-3xl" />
+
+      {/* Globe Background overlay on the right side */}
+      <div className="pointer-events-none absolute right-[-5%] top-1/2 -translate-y-1/2 opacity-25 lg:right-[5%]">
+        <img 
+          src={images.globeImg} 
+          alt="Global filtration network" 
+          className="h-[500px] w-[500px] object-contain animate-pulse duration-[8000ms]" 
+        />
+      </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
         <div>
@@ -56,7 +67,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div data-card className="drift rounded-xl border border-white/15 bg-white/[0.06] p-7 backdrop-blur-sm">
+        <div data-card className="drift relative z-10 rounded-xl border border-white/15 bg-white/[0.06] p-7 backdrop-blur-md">
           <div className="flex items-center gap-2 text-sm text-white/70">
             <Droplet className="h-4 w-4 text-leaf" fill="currentColor" />
             Hydraulic oil cleanliness, ISO 4406
